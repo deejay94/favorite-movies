@@ -40,12 +40,12 @@ const onSignOut = function (event) {
   $('#change-password').hide()
 }
 
-const onCreateGame = function (event) {
+const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createGame(data)
-    .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure)
+    .then(ui.createListSuccess)
+    .catch(ui.createListFailure)
   $('.box').text('')
   $('.box').on('click', logic.displayLetter)
   $('.box').on('click', logic.whoWon)
@@ -53,15 +53,15 @@ const onCreateGame = function (event) {
   store.clickCounter = 0
 }
 
-const OnUpdateGame = function () {
+const OnUpdateList = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateGame(data)
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure)
+  api.updateList(data)
+    .then(ui.updateListSuccess)
+    .catch(ui.updateListFailure)
 }
 
-const onGetGames = function (event) {
+const onGetList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.index(data)
@@ -77,13 +77,13 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#create-game').on('click', onCreateGame)
-  $('#games-search').on('click', onGetGames)
+  $('#create-list').on('click', onCreateList)
+  $('#lists-search').on('click', onGetList)
 }
 
 module.exports = {
   addHandlers,
-  onCreateGame,
-  OnUpdateGame,
-  onGetGames
+  onCreateList,
+  OnUpdateList,
+  onGetList
 }

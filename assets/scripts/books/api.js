@@ -39,9 +39,9 @@ const signOut = function () {
   })
 }
 
-const createGame = function (data) {
+const createList = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/games',
+    url: config.apiOrigin + '/favorite_movies',
     method: 'POST',
     data: '{}',
     headers: {
@@ -50,28 +50,27 @@ const createGame = function (data) {
   })
 }
 
-const updateGame = function (index, value, isOver) {
+const updateList = function (title, genre, comment) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.game.id,
+    url: config.apiOrigin + '/favorite_movies/' + store.favorite_movie.id,
     method: 'PATCH',
     data: {
-      'game': {
-        'cell': {
-          'index': index,
-          'value': value
-        },
-        'over': isOver
+      'title': {
+        'genre': {
+          'comment': {
+          }
+        }
+      },
+      headers: {
+        Authorization: 'Token token=' + store.user.token
       }
-    },
-    headers: {
-      Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
 const index = function () {
   return $.ajax({
-    url: config.apiOrigin + '/games',
+    url: config.apiOrigin + '/favorite_movies',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -84,7 +83,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  createGame,
-  updateGame,
+  createList,
+  updateList,
   index
 }

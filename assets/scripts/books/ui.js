@@ -15,8 +15,8 @@ const signInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-up').trigger('reset')
   $('#sign-out').show()
-  $('#create-game').show()
-  $('.games').show()
+  $('#create-list').show()
+  $('.lists').show()
   $('#sign-up').hide()
   $('.box').off()
   $('#sign-in').hide()
@@ -38,9 +38,9 @@ const signOutSuccess = function () {
   $('#message').text('Successfully signed out')
   $('#sign-in').trigger('reset')
   $('#sign-out').hide()
-  $('.games').hide()
+  $('.lists').hide()
   $('#message3').text('')
-  $('#create-game').hide()
+  $('#create-list').hide()
   $('#message2').text('')
   $('#sign-up').show()
   $('.box').text('')
@@ -52,34 +52,34 @@ const signOutFailure = function () {
   $('#message').text('Error on sign out')
 }
 
-const createGameSuccess = function (data) {
+const createListSuccess = function (data) {
   $('#message').text('Successfully created game')
   store.game = data.game
   $('.box').show()
 }
 
-const createGameFailure = function () {
+const createListFailure = function () {
   $('#message').text('Error on creating a game')
 }
 
-const updateGameSuccess = function (data) {
+const updateListSuccess = function (data) {
   $('#message').text('Successfully updated game')
   store.game = data.game
 }
 
-const updateGameFailure = function () {
+const updateListFailure = function () {
   $('#message').text('Error on updating a game')
 }
 
 const onSuccess = function (data) {
-  if (data.games) {
-    $('#message2').text('You have played ' + data.games.length + ' game(s)!')
+  if (data.lists) {
+    $('#message2').text('You have played ' + data.lists.length + ' game(s)!')
   } else {
   }
 }
 
 const onError = function (response) {
-  $('#message').text('Error on getting number of games played')
+  $('#message').text('Error on getting number of lists played')
 }
 
 module.exports = {
@@ -91,10 +91,10 @@ module.exports = {
   changePasswordFailure,
   signOutFailure,
   signOutSuccess,
-  createGameSuccess,
-  createGameFailure,
-  updateGameSuccess,
-  updateGameFailure,
+  createListSuccess,
+  createListFailure,
+  updateListSuccess,
+  updateListFailure,
   onSuccess,
   onError
 }
