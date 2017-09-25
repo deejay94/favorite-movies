@@ -1,0 +1,9 @@
+{{#each favorite_movies as |favorite_movie|}}
+
+  <ul data-id="{{favorite_movie.id}}">
+    <li> Title: <strong>{{favorite_movie.title}}</strong> Genre: <strong>{{favorite_movie.genre}}</strong> Comment: <strong>{{favorite_movie.comment}}</strong> Genre: <strong>{favorite_movie.genre}}</strong>
+    <li><button class= "remove-movie">Remove Movie From List</button></li>
+  </li>
+  </ul>
+
+{{/each}}
