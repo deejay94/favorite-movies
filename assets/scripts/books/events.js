@@ -43,7 +43,7 @@ const onSignOut = function (event) {
 const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.createGame(data)
+  api.createList(data)
     .then(ui.createListSuccess)
     .catch(ui.createListFailure)
   $('.box').text('')
