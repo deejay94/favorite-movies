@@ -2,8 +2,8 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const logic = require('./gamelogic')
-const store = require('../store')
+// const logic = require('./gamelogic')
+// const store = require('../store')
 
 const onSignUp = function (event) {
   const data = getFormFields(event.target)
@@ -36,32 +36,25 @@ const onSignOut = function (event) {
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  $('.box').hide()
-  $('#change-password').hide()
 }
 
-const onCreateList = function (event) {
+const onCreateFave = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.createList(data)
-    .then(ui.createListSuccess)
-    .catch(ui.createListFailure)
-  $('.box').text('')
-  $('.box').on('click', logic.displayLetter)
-  $('.box').on('click', logic.whoWon)
-  $('#message3').text('')
-  store.clickCounter = 0
+  api.createFave(data)
+    .then(ui.createFaveSuccess)
+    .catch(ui.createFaveFailure)
 }
 
-const OnUpdateList = function () {
+const OnUpdateFave = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateList(data)
-    .then(ui.updateListSuccess)
-    .catch(ui.updateListFailure)
+  api.updateFave(data)
+    .then(ui.updateFaveSuccess)
+    .catch(ui.updateFaveFailure)
 }
 
-const onGetList = function (event) {
+const onGetFaves = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.index(data)
@@ -70,20 +63,17 @@ const onGetList = function (event) {
 }
 
 const addHandlers = function () {
-  $('.box').on('click', logic.displayLetter)
-  $('.box').on('click', logic.whoWon)
-  $('.reset').on('click', logic.newGame)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#create-list').on('click', onCreateList)
-  $('#lists-search').on('click', onGetList)
+  $('#create-fave').on('click', onCreateFave)
+  $('#faves-search').on('click', onGetFaves)
 }
 
 module.exports = {
   addHandlers,
-  onCreateList,
-  OnUpdateList,
-  onGetList
+  onCreateFave,
+  OnUpdateFave,
+  onGetFaves
 }

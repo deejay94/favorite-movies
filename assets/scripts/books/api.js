@@ -39,7 +39,7 @@ const signOut = function () {
   })
 }
 
-const createList = function (data) {
+const createFave = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies',
     method: 'POST',
@@ -50,7 +50,7 @@ const createList = function (data) {
   })
 }
 
-const updateList = function (title, genre, comment) {
+const updateFave = function (title, genre, comment) {
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies/' + store.favorite_movie.id,
     method: 'PATCH',
@@ -83,7 +83,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  createList,
-  updateList,
+  createFave,
+  updateFave,
   index
 }
