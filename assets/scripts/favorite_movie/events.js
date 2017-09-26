@@ -20,8 +20,8 @@ const onGetFaves = function (event) {
 }
 
 const addHandlers = function () {
-  $('#create-movie').on('submit', onCreateFave)
-  $('#get-movies').on('submit', onGetFaves)
+  $('#create-fave').on('submit', onCreateFave)
+  $('#get-faves').on('submit', onGetFaves)
 }
 
 module.exports = {
