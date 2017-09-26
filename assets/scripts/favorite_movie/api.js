@@ -1,7 +1,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const createFave = function (data) {
+const AddFave = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies',
     method: 'POST',
@@ -23,6 +23,6 @@ const getFaves = function () {
 }
 
 module.exports = {
-  createFave,
+  AddFave,
   getFaves
 }

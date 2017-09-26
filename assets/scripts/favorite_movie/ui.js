@@ -1,11 +1,12 @@
 const showFavesTemplate = require('../templates/favorite-movie-listing.handlebars')
 
-const createFaveSuccess = function (data) {
+const addFaveSuccess = function (data) {
   console.log('You have Successfully added movie to your list')
   $('#message').text('You have successfully added movie to your list')
   console.log(data)
+
 }
-const createFaveFailure = function () {
+const addFaveFailure = function () {
   console.log('Add Fave failure')
   $('#message').text('You have failed to add a movie to your list')
 }
@@ -22,8 +23,8 @@ const getFavesFailure = function () {
 }
 
 module.exports = {
-  createFaveSuccess,
-  createFaveFailure,
+  addFaveSuccess,
+  addFaveFailure,
   getFavesFailure,
   getFavesSuccess
 }

@@ -2,14 +2,14 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-const onCreateFave = function (event) {
+const onAddFave = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('Create Fave button working')
-  console.log('our data is ', data)
-  api.createFave(data)
-    .then(ui.createFaveSuccess)
-    .catch(ui.createFaveFailure)
+  console.log('Add Fave button working')
+  console.log(data)
+  api.addFave(data)
+    .then(ui.addFaveSuccess)
+    .catch(ui.addFaveFailure)
 }
 
 const onGetFaves = function (event) {
@@ -19,11 +19,15 @@ const onGetFaves = function (event) {
     .catch(ui.getFavesFailure)
 }
 
-const addHandlers = function () {
-  $('#create-fave').on('submit', onCreateFave)
-  $('#get-faves').on('submit', onGetFaves)
+const onClearFaves = () => {
+  $('.list').empty()
 }
 
+const addHandlers = function () {
+  $('.add-fave').on('submit', onAddFave)
+  $('#getFaves').on('submit', onGetFaves)
+  $('.list').on('submit', onClearFaves)
+}
 module.exports = {
   addHandlers
 }
