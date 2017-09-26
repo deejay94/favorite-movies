@@ -6,13 +6,11 @@ const store = require('../store')
 const showFavesTemplate = require('../templates/favorite-movie-listing.handlebars')
 
 const getFavesSuccess = (data) => {
-  console.log(data.favorite_movie.id)
+  console.log(data)
   console.log('hey im here')
-  if (data.favorite_movie.id === store.user.id) {
-    const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
+    const showFavesHtml = showFavesTemplate({ favorite_movie: data.favorite_movies })
     $('.content').append(showFavesHtml)
   }
-}
 
 const clearFaves = () => {
   $('.content').empty()
