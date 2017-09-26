@@ -59,45 +59,21 @@
               </fieldset>
             </form>
 
-            <h2 id="message2"></h2>
+      <form class="movie-info">
+        <fieldset>
+          <legend>Movie Info</legend>
+          <input type="text" name="favorite_movie[title]" placeholder="Title">
+          <input type="text" name="favorite_movie[genre]" placeholder="Genre">
+          <input type="text" name="favorite_movie[comment]" placeholder="Comment">
+          <input type="submit" name="submit" value="submit">
+        </fieldset>
+      </form>
 
-
-            <h1 id="message3"></h1>
-
-
-      <div class="container">
-
-              <div class="row">
-
-                <div class="col-xs-4 box draw-bottom draw-right" id ="box0"></div>
-
-                <div class="col-xs-4 box draw-bottom draw-left draw-right" id ="box1"></div>
-
-                <div class="col-xs-4 box draw-bottom draw-left" id="box2"></div>
-
-              </div>
-
-              <div class="row">
-
-                <div class="col-xs-4 box draw-bottom draw-top draw-right"  id="box3"></div>
-
-                <div class="col-xs-4 box draw-left draw-right draw-top draw-bottom" id="box4"></div>
-
-                <div class="col-xs-4 box draw-left draw-top draw-bottom" id="box5"></div>
-
-              </div>
-
-              <div class="row">
-
-                <div class="col-xs-4 box draw-top draw-right" id="box6"></div>
-
-                <div class="col-xs-4 box draw-top draw-right draw-left" id="box7"></div>
-
-                <div class="col-xs-4 box draw-top draw-left" id="box8"></div>
-
-              </div>
-
-            </div>
-
+    <div class="container">
+      <button id="getFavesButton" class="btn btn-default">Get Faves!</button>
+      <button id="clearFavesButton" class="btn btn-default">Clear Faves!</button>
+        <div id="content" class="content">
+    </div>
+</div>
     </body>
 </html>
