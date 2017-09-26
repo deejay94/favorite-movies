@@ -39,51 +39,9 @@ const signOut = function () {
   })
 }
 
-const createFave = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/favorite_movies',
-    method: 'POST',
-    data: '{}',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const updateFave = function (title, genre, comment) {
-  return $.ajax({
-    url: config.apiOrigin + '/favorite_movies/' + store.favorite_movie.id,
-    method: 'PATCH',
-    data: {
-      'title': {
-        'genre': {
-          'comment': {
-          }
-        }
-      },
-      headers: {
-        Authorization: 'Token token=' + store.user.token
-      }
-    }
-  })
-}
-
-const index = function () {
-  return $.ajax({
-    url: config.apiOrigin + '/favorite_movies',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut,
-  createFave,
-  updateFave,
-  index
+  signOut
 }

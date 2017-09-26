@@ -15,8 +15,6 @@ const signInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-up').trigger('reset')
   $('#sign-out').show()
-  $('#create-list').show()
-  $('.lists').show()
   $('#sign-up').hide()
   $('.box').off()
   $('#sign-in').hide()
@@ -38,48 +36,13 @@ const signOutSuccess = function () {
   $('#message').text('Successfully signed out')
   $('#sign-in').trigger('reset')
   $('#sign-out').hide()
-  $('.lists').hide()
-  $('#message3').text('')
-  $('#create-list').hide()
-  $('#message2').text('')
   $('#sign-up').show()
   $('.box').text('')
   $('#sign-in').show()
-  store.clickCounter = 0
 }
 
 const signOutFailure = function () {
   $('#message').text('Error on sign out')
-}
-
-const createListSuccess = function (data) {
-  $('#message').text('Successfully created game')
-  store.game = data.game
-  $('.box').show()
-}
-
-const createListFailure = function () {
-  $('#message').text('Error on creating a game')
-}
-
-const updateListSuccess = function (data) {
-  $('#message').text('Successfully updated game')
-  store.game = data.game
-}
-
-const updateListFailure = function () {
-  $('#message').text('Error on updating a game')
-}
-
-const onSuccess = function (data) {
-  if (data.lists) {
-    $('#message2').text('You have played ' + data.lists.length + ' game(s)!')
-  } else {
-  }
-}
-
-const onError = function (response) {
-  $('#message').text('Error on getting number of lists played')
 }
 
 module.exports = {
@@ -90,11 +53,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutFailure,
-  signOutSuccess,
-  createListSuccess,
-  createListFailure,
-  updateListSuccess,
-  updateListFailure,
-  onSuccess,
-  onError
+  signOutSuccess
 }

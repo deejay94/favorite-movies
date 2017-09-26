@@ -10,6 +10,7 @@ const onAddFave = function (event) {
   api.addFave(data)
     .then(ui.addFaveSuccess)
     .catch(ui.addFaveFailure)
+  $('.content').append(data)
 }
 
 const onGetFaves = function (event) {

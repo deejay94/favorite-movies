@@ -38,42 +38,13 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const onCreateFave = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.createFave(data)
-    .then(ui.createFaveSuccess)
-    .catch(ui.createFaveFailure)
-}
-
-const OnUpdateFave = function () {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.updateFave(data)
-    .then(ui.updateFaveSuccess)
-    .catch(ui.updateFaveFailure)
-}
-
-const onGetFaves = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.index(data)
-    .then(ui.onSuccess)
-    .catch(ui.onError)
-}
-
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#create-fave').on('click', onCreateFave)
-  $('#faves-search').on('click', onGetFaves)
 }
 
 module.exports = {
-  addHandlers,
-  onCreateFave,
-  OnUpdateFave,
-  onGetFaves
+  addHandlers
 }
