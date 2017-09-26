@@ -4,7 +4,8 @@ const addFaveSuccess = function (data) {
   console.log('You have Successfully added movie to your list')
   $('#message').text('You have successfully added movie to your list')
   console.log(data)
-
+  const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movie })
+  $('.content').append(showFavesHtml)
 }
 const addFaveFailure = function () {
   console.log('Add Fave failure')
@@ -14,8 +15,8 @@ const getFavesSuccess = function (data) {
   console.log(data)
   console.log('List of movies attained')
   $('#message').text('Here is your to-watch list')
-  const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
-  $('#list').append(showFavesHtml)
+  // const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
+  // $('#list').append(showFavesHtml)
 }
 
 const getFavesFailure = function () {
