@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../store')
+// const store = require('../store')
 // const data = require('./auth1/ui')
 
 const showFavesTemplate = require('../templates/favorite-movie-listing.handlebars')
@@ -8,7 +8,7 @@ const showFavesTemplate = require('../templates/favorite-movie-listing.handlebar
 const getFavesSuccess = (data) => {
   console.log(data)
   console.log('hey im here')
-    const showFavesHtml = showFavesTemplate({ favorite_movie: data.favorite_movies })
+    const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
     $('.content').append(showFavesHtml)
   }
 
