@@ -38,7 +38,7 @@ const getFavesFailure = function () {
 }
 
 const updateFaveSuccess = function () {
-  $('#message').text('You have successfully deleted a favorite movie')
+  $('#message').text('You have successfully updated a favorite movie')
   console.log('hitting the get')
   api.index()
     .then(getFavesSuccess)
@@ -46,7 +46,7 @@ const updateFaveSuccess = function () {
 }
 
 const updateFaveFailure = function () {
-  $('#message').text('You have successfully deleted a favorite movie')
+  $('#message').text('You have NOT successfully updated a favorite movie')
 }
 
 const deleteFaveSuccess = function () {
