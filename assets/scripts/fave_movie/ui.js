@@ -12,9 +12,9 @@ const showFavesTemplate = require('../templates/favorite-movie-listing.handlebar
 //   console.log(store.favorite_movie)
 // }
 
-const createFaveFailure = function () {
-  $('#message').text('Error on creating a game')
-}
+// const createFaveFailure = function () {
+//   $('#message').text('Error on creating a game')
+// }
 
 const getFavesSuccess = (data) => {
   console.log(data.favorite_movie)
@@ -23,6 +23,18 @@ const getFavesSuccess = (data) => {
 
   const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
   $('.content').append(showFavesHtml)
+  $('.remove-fave').on('click', function () {
+    $(this).parent().parent().remove()
+    console.log(this)
+  })
+}
+
+const deleteFaveSuccess = function () {
+  $('#message').text('You have successfully deleted a favorite movie')
+}
+
+const deleteFavefailure = function () {
+  $('#message').text('You have NOT successfully deleted a favorite movie')
 }
 
 const clearFaves = () => {
@@ -37,6 +49,8 @@ module.exports = {
   getFavesSuccess,
   clearFaves,
   failure,
-  createFaveFailure
+  // createFaveFailure,
+  deleteFaveSuccess,
+  deleteFavefailure
   // createFaveSuccess
 }

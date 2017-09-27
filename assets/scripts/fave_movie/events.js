@@ -17,7 +17,24 @@ const onGetFaves = (event) => {
   event.preventDefault()
   api.getFaves()
     .then(ui.getFavesSuccess)
-    .catch(ui.failure)
+    .then(function () {
+      $('.delete-fave').on('click', deleteFave)
+    })
+    .catch(ui.getFavesfailure)
+}
+
+const deleteFave = function (event) {
+  event.preventDefault()
+  // what does this click handler get as an argument by default?
+  // something called `event`. But what it is event!?! What is event.target?!
+  console.log('event.target is', event.target)
+  // is there anything useful in here ^  ^  ^  ????
+
+  const bookId = event.target.getAttribute('data-id')
+  console.log("We're about to delete book with id: ", bookId)
+  // where does `data-id` come from? Do a cmd + shift + f and search for data-id
+
+  // what do I need to do now that I have the id?!?
 }
 
 const onClearFaves = (event) => {
