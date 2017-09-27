@@ -25,6 +25,9 @@ const onGetFaves = (event) => {
 
 const onDestroy = function (event) {
   event.preventDefault()
+  console.log('deleting')
+  console.log($(this).parent().parent().data('id'))
+  api.destroy($(this).parent().parent().data('id'))
   // what does this click handler get as an argument by default?
   // something called `event`. But what it is event!?! What is event.target?!
   console.log('event.target is', event.target)

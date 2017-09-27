@@ -52,10 +52,12 @@ const index = function () {
   })
 }
 
-const destroy = function () {
-  console.log(store)
+const destroy = function (data) {
+  console.log('store.id')
+  console.log(data)
+  console.log(store.id)
   return $.ajax({
-    url: config.apiOrigin + '/favorite_movies/' + store.id,
+    url: config.apiOrigin + '/favorite_movies/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
