@@ -1,5 +1,5 @@
 'use strict'
-// const api = require('./api')
+const api = require('./api')
 // const store = require('../store')
 // const data = require('./auth1/ui')
 
@@ -20,8 +20,9 @@ const getFavesSuccess = (data) => {
   console.log(data.favorite_movie)
   console.log(data)
   console.log('hey im here')
-
+  console.log('im running')
   const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
+  $('.fave-movie').remove()
   $('.content').append(showFavesHtml)
   $('.remove-fave').on('click', function () {
     $(this).parent().parent().remove()
@@ -32,8 +33,16 @@ const getFavesSuccess = (data) => {
   })
 }
 
+const getFavesFailure = function () {
+  $('#message').text('You have NOT successfully displayed favorite movies')
+}
+
 const updateFaveSuccess = function () {
   $('#message').text('You have successfully deleted a favorite movie')
+  console.log('hitting the get')
+  api.index()
+    .then(getFavesSuccess)
+    .catch(getFavesFailure)
 }
 
 const updateFaveFailure = function () {
@@ -58,6 +67,7 @@ const failure = (error) => {
 
 module.exports = {
   getFavesSuccess,
+  getFavesFailure,
   clearFaves,
   failure,
   updateFaveFailure,

@@ -42,16 +42,14 @@ const onDestroy = function (event) {
 
 const onUpdateFave = function (event) {
     event.preventDefault()
-    const data = getFormFields(event.target)
+    const data = getFormFields(this)
     console.log('oiiiiiii')
-    console.log(event)
-    // const data = function () {
-    // const newTitle = $(favorite_movie.title).html()
-    // const newGenre = $(favorite_movie.genre).html()
-    // const newComment = $(favorite_movie.comment).html()
-  // }
-    console.log(event.target)
-    api.update(data)
+    console.log(data.favorite_movie.id)
+    console.log(this)
+    const id = data.favorite_movie.id
+    console.log('showing data')
+    console.log(data)
+    api.update(data, id)
       .then(ui.updateFaveSuccess)
       .catch(ui.updateFaveFailure)
   }

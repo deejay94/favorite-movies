@@ -24,21 +24,16 @@ const create = function (data) {
   })
 }
 
-const update = function (title, genre, comment) {
-  console.log(store)
+const update = function (data, id) {
+  console.log('oh no')
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/favorite_movies/' + store.user.id,
+    url: config.apiOrigin + '/favorite_movies/' + id,
     method: 'PATCH',
-    data: {
-      'favorite_movie': {
-        'title': title,
-        'genre': genre,
-        'comment': comment
-      }
-    },
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
