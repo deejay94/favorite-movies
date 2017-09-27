@@ -15,15 +15,15 @@ const ui = require('./ui.js')
 const onGetFaves = (event) => {
   console.log('heyyy')
   event.preventDefault()
-  api.getFaves()
+  api.index()
     .then(ui.getFavesSuccess)
     .then(function () {
-      $('.delete-fave').on('click', deleteFave)
+      $('.delete-fave').on('click', onDestroy)
     })
     .catch(ui.getFavesfailure)
 }
 
-const deleteFave = function (event) {
+const onDestroy = function (event) {
   event.preventDefault()
   // what does this click handler get as an argument by default?
   // something called `event`. But what it is event!?! What is event.target?!

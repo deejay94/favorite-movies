@@ -1,7 +1,7 @@
 'use strict'
 
 const config = require('../config.js')
-// const store = require('../store')
+const store = require('../store')
 
 // const createFave = function (data) {
 //   return $.ajax({
@@ -13,30 +13,61 @@ const config = require('../config.js')
 //     data
 //   })
 // }
-
-const getFaves = function () {
+const create = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies',
-    method: 'GET'
+    method: 'POST',
+    data: '{}',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
-const deleteFave = function (event) {
-  event.preventDefault()
-  // what does this click handler get as an argument by default?
-  // something called `event`. But what it is event!?! What is event.target?!
-  console.log('event.target is', event.target)
-  // is there anything useful in here ^  ^  ^  ????
+const update = function (title, genre, comment) {
+  return $.ajax({
+    url: config.apiOrigin + '/favorite_movies/' + store.favorite_movie.id,
+    method: 'PATCH',
+    data: {
+      'favorite_movie': {
+        'title': title,
+        'genre': genre,
+        'comment': comment
+      }
+    },
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
-  const bookId = event.target.getAttribute('data-id')
-  console.log("We're about to delete book with id: ", bookId)
-  // where does `data-id` come from? Do a cmd + shift + f and search for data-id
+const index = function () {
+  console.log('getting faves')
+  return $.ajax({
+    url: config.apiOrigin + '/favorite_movies',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
-  // what do I need to do now that I have the id?!?
+const destroy = function () {
+  console.log(store)
+  return $.ajax({
+    url: config.apiOrigin + '/favorite_movies/' + store.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
 
 module.exports = {
-  getFaves,
-  deleteFave
-  // createFave
+  index,
+  destroy,
+  update,
+  create
+  // create,
+  // update
 }

@@ -27,6 +27,9 @@ const getFavesSuccess = (data) => {
     $(this).parent().parent().remove()
     console.log(this)
   })
+  $('.delete-fave').on('click', function () {
+    $(this).parent().parent().remove()
+  })
 }
 
 const deleteFaveSuccess = function () {
