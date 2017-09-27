@@ -1,6 +1,6 @@
 'use strict'
 
-// const getFormFields = require(`../../../lib/get-form-fields`)
+const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -40,6 +40,22 @@ const onDestroy = function (event) {
   // what do I need to do now that I have the id?!?
 }
 
+const onUpdateFave = function (event) {
+    event.preventDefault()
+    const data = getFormFields(event.target)
+    console.log('oiiiiiii')
+    console.log(event)
+    // const data = function () {
+    // const newTitle = $(favorite_movie.title).html()
+    // const newGenre = $(favorite_movie.genre).html()
+    // const newComment = $(favorite_movie.comment).html()
+  // }
+    console.log(event.target)
+    api.update(data)
+      .then(ui.updateFaveSuccess)
+      .catch(ui.updateFaveFailure)
+  }
+
 const onClearFaves = (event) => {
   event.preventDefault()
   ui.clearFaves()
@@ -48,6 +64,7 @@ const onClearFaves = (event) => {
 const addHandlers = () => {
   $('#getFaves').on('click', onGetFaves)
   $('#clearFaves').on('click', onClearFaves)
+  $('.update-fave').on('click', onUpdateFave)
   // $('#create-fave').on('click', onCreateFave)
 }
 

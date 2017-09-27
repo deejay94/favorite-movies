@@ -65,13 +65,20 @@
           <input type="text" name="favorite_movie[title]" placeholder="Title">
           <input type="text" name="favorite_movie[genre]" placeholder="Genre">
           <input type="text" name="favorite_movie[comment]" placeholder="Comment">
-          <input class="add-fave" type="submit" name="submit" value="submit">
+          <input type="submit" name="submit" value="submit">
         </fieldset>
       </form>
 
     <div class="container">
       <button id="getFaves" class="btn btn-default">Get Faves!</button>
       <button id="clearFaves" class="btn btn-default">Clear Faves!</button>
+      <form class="update-fave">
+        <input type="text" name="favorite_movie[id]" placeholder="Enter favorite movie id">
+        <input type="text" name="favorite_movie[title]" placeholder="Enter new favorite movie title">
+        <input type="text" name="favorite_movie[genre]" placeholder="Enter new favorite movie genre">
+        <input type="text" name="favorite_movie[comment]" placeholder="Enter favorite movie comment">
+        <input type="submit" name="update" value="Edit Fave">
+      </form>
         <div id="content" class="content">
     </div>
 </div>

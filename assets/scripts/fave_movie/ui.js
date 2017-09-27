@@ -32,6 +32,14 @@ const getFavesSuccess = (data) => {
   })
 }
 
+const updateFaveSuccess = function () {
+  $('#message').text('You have successfully deleted a favorite movie')
+}
+
+const updateFaveFailure = function () {
+  $('#message').text('You have successfully deleted a favorite movie')
+}
+
 const deleteFaveSuccess = function () {
   $('#message').text('You have successfully deleted a favorite movie')
 }
@@ -52,6 +60,8 @@ module.exports = {
   getFavesSuccess,
   clearFaves,
   failure,
+  updateFaveFailure,
+  updateFaveSuccess,
   // createFaveFailure,
   deleteFaveSuccess,
   deleteFavefailure

@@ -25,8 +25,9 @@ const create = function (data) {
 }
 
 const update = function (title, genre, comment) {
+  console.log(store)
   return $.ajax({
-    url: config.apiOrigin + '/favorite_movies/' + store.favorite_movie.id,
+    url: config.apiOrigin + '/favorite_movies/' + store.user.id,
     method: 'PATCH',
     data: {
       'favorite_movie': {
