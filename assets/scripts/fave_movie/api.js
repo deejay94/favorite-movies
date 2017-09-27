@@ -1,18 +1,18 @@
 'use strict'
 
 const config = require('../config.js')
-const store = require('../store')
+// const store = require('../store')
 
-const makeFave = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/movies',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// const createFave = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/favorite_movies',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const getFaves = function () {
   return $.ajax({
@@ -23,5 +23,5 @@ const getFaves = function () {
 
 module.exports = {
   getFaves,
-  makeFave
+  createFave
 }
