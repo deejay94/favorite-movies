@@ -14,30 +14,22 @@
     <body class="container-fluid">
       <h1>My Favorite Movies</h1>
 
-      <form id="create-fave">
-              <fieldset>
-                <legend>Create New Fave!</legend>
-                <input type="submit" name="create fave" value="Create New Fave">
-              </fieldset>
-            </form>
-
 
       <p id='message'></p>
-      <h1>API Token Auth</h1>
       <form id="sign-up">
         <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="text" name="credentials[email]" placeholder="Username">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
 
+      <p id='message2'></p>
+
       <form id="sign-in">
         <fieldset>
-          <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="text" name="credentials[email]" placeholder="Username">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
@@ -45,7 +37,6 @@
 
       <form id="change-password">
         <fieldset>
-          <legend>Change Password!</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
           <input type="submit" name="submit" value="Change Password!">
@@ -54,14 +45,13 @@
 
       <form class="sign-out" id="sign-out">
               <fieldset>
-                <legend>Sign out!</legend>
                 <input type="submit" name="sign out" value="Sign Out!">
               </fieldset>
             </form>
 
       <form class="movie-info">
         <fieldset>
-          <legend>Movie Info</legend>
+          <h3>Enter your favorite movie data</h3>
           <input type="text" name="favorite_movie[title]" placeholder="Title">
           <input type="text" name="favorite_movie[genre]" placeholder="Genre">
           <input type="text" name="favorite_movie[comment]" placeholder="Comment">
@@ -70,13 +60,13 @@
       </form>
 
     <div class="container">
-      <button id="getFaves" class="btn btn-default">Get Faves!</button>
-      <button id="clearFaves" class="btn btn-default">Clear Faves!</button>
+        <button id="getFaves" class="btn btn-default">Get Faves!</button>
+        <button id="clearFaves" class="btn btn-default">Clear Faves!</button>
       <form class="update-fave">
-        <input type="text" name="favorite_movie[id]" placeholder="Enter favorite movie id">
-        <input type="text" name="favorite_movie[title]" placeholder="Enter new favorite movie title">
-        <input type="text" name="favorite_movie[genre]" placeholder="Enter new favorite movie genre">
-        <input type="text" name="favorite_movie[comment]" placeholder="Enter favorite movie comment">
+        <input class="update" type="text" name="favorite_movie[id]" placeholder="Enter favorite movie id">
+        <input class="update" type="text" name="favorite_movie[title]" placeholder="Enter new favorite movie title">
+        <input class="update" type="text" name="favorite_movie[genre]" placeholder="Enter new favorite movie genre">
+        <input class="update" type="text" name="favorite_movie[comment]" placeholder="Enter favorite movie comment">
         <input type="submit" name="update" value="Edit Fave">
       </form>
         <div id="content" class="content">

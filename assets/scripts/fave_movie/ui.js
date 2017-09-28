@@ -17,7 +17,6 @@ const showFavesTemplate = require('../templates/favorite-movie-listing.handlebar
 // }
 
 const getFavesSuccess = (data) => {
-  console.log(data.favorite_movie)
   console.log(data)
   console.log('hey im here')
   console.log('im running')
@@ -26,9 +25,10 @@ const getFavesSuccess = (data) => {
   $('.content').append(showFavesHtml)
   $('.remove-fave').on('click', function () {
     $(this).parent().parent().remove()
-    console.log(this)
+    $('#message').text('You have successfully removed a favorite movie')
   })
   $('.delete-fave').on('click', function () {
+    $('#message').text('You have successfully deleted a favorite movie')
     $(this).parent().parent().remove()
   })
 }
@@ -40,6 +40,7 @@ const getFavesFailure = function () {
 const updateFaveSuccess = function () {
   $('#message').text('You have successfully updated a favorite movie')
   console.log('hitting the get')
+  $('.update-fave').text('')
   api.index()
     .then(getFavesSuccess)
     .catch(getFavesFailure)
@@ -58,6 +59,7 @@ const deleteFavefailure = function () {
 }
 
 const clearFaves = () => {
+  $('#message').text('You have successfully cleared a favorite movie')
   $('.content').empty()
 }
 

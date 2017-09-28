@@ -1,8 +1,11 @@
 const store = require('../store')
+// const start = require('../fave_movie/on-begin')
 // const logic = require('./gamelogic')
 
 const signUpSuccess = function () {
-  $('#message').text('Successfully signed up')
+  $('#message').text('Successfully signed up. Please sign-in')
+  $('#sign-up').hide()
+  $('#message2').hide()
 }
 
 const signUpFailure = function () {
@@ -11,6 +14,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
+  $('#message2').hide()
   store.user = data.user
   $('#change-password').show()
   $('#sign-up').trigger('reset')
@@ -18,6 +22,9 @@ const signInSuccess = function (data) {
   $('#sign-up').hide()
   $('.box').off()
   $('#sign-in').hide()
+  $('.container').show()
+  $('.movie-info').show()
+  $('.content').show()
 }
 
 const signInFailure = function () {
@@ -37,8 +44,15 @@ const signOutSuccess = function () {
   $('#sign-in').trigger('reset')
   $('#sign-out').hide()
   $('#sign-up').show()
-  $('.box').text('')
   $('#sign-in').show()
+  $('.fave-movie').hide()
+  $('.movie-info').hide()
+  $('#change-password').hide()
+  $('.container').hide()
+  $('.movie-info').trigger('reset')
+  $('.update-fave').trigger('reset')
+  $('#change-password').trigger('reset')
+  $('#message2').show()
 }
 
 const signOutFailure = function () {
