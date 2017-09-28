@@ -25,8 +25,6 @@ I would like to do more css next time and use my creativity.
 wireframe:
 https://imgur.com/medBwqt
 
-user stories:
-
 
 User Stories:
 
