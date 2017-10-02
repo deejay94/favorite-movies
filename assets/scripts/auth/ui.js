@@ -40,8 +40,9 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Successfully signed out')
-  $('#messagebelow').text('New user? Please sign up')
+  // $('#message3').text('Successfully signed out').fadeout(2400)
+  $('#message').text('Registered account? Please sign in')
+  $('#message2').text('New user? Please sign up')
   $('#sign-in').trigger('reset')
   $('#sign-out').hide()
   $('#sign-up').show()

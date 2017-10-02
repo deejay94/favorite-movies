@@ -3,30 +3,29 @@
 const config = require('../config.js')
 const store = require('../store')
 
-// const createFave = function (data) {
+// const create = function (data) {
 //   return $.ajax({
 //     url: config.apiOrigin + '/favorite_movies',
 //     method: 'POST',
+//     data: '{}',
 //     headers: {
 //       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
+//     }
 //   })
 // }
+
 const create = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies',
     method: 'POST',
-    data: '{}',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
 const update = function (data, id) {
-  console.log('oh no')
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies/' + id,
     method: 'PATCH',
@@ -38,7 +37,6 @@ const update = function (data, id) {
 }
 
 const index = function () {
-  console.log('getting faves')
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies',
     method: 'GET',
@@ -49,9 +47,6 @@ const index = function () {
 }
 
 const destroy = function (data) {
-  console.log('store.id')
-  console.log(data)
-  console.log(store.id)
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies/' + data,
     method: 'DELETE',
@@ -66,6 +61,4 @@ module.exports = {
   destroy,
   update,
   create
-  // create,
-  // update
 }
