@@ -38,7 +38,6 @@ const getFavesFailure = function () {
 
 const updateFaveSuccess = function () {
   $('#message').text('You have successfully updated a favorite movie')
-  console.log('here')
   api.index()
     .then(getFavesSuccess)
     .catch(getFavesFailure)
