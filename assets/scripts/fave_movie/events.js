@@ -40,7 +40,6 @@ const onDestroy = function (event) {
 }
 
 const onUpdateFave = function (event) {
-  console.log('now updating')
   event.preventDefault()
   const data = getFormFields(this)
   const id = data.favorite_movie.id
@@ -58,7 +57,7 @@ const addHandlers = () => {
   $('.movie-info').on('submit', onAddFave)
   $('#getFaves').on('click', onGetFaves)
   $('#clearFaves').on('click', onClearFaves)
-  $('.update-fave').on('click', onUpdateFave)
+  $('.update-fave').on('submit', onUpdateFave)
 }
 
 module.exports = {
