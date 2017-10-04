@@ -26,6 +26,7 @@ const create = function (data) {
 }
 
 const update = function (data, id) {
+  console.log('updating')
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies/' + id,
     method: 'PATCH',
