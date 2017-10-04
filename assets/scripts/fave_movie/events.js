@@ -18,11 +18,9 @@ $(function () {
 const onAddFave = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('Add Fave button working')
-  console.log(data)
   api.create(data)
-    .then(ui.addFaveSuccess)
-    .catch(ui.addFaveFailure)
+    .then(ui.createFaveSuccess)
+    .catch(ui.createFaveFailure)
   $('.content').append(data)
 }
 
@@ -42,6 +40,7 @@ const onDestroy = function (event) {
 }
 
 const onUpdateFave = function (event) {
+  console.log('now updating')
   event.preventDefault()
   const data = getFormFields(this)
   const id = data.favorite_movie.id
