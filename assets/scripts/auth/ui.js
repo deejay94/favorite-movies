@@ -25,6 +25,7 @@ const signInSuccess = function (data) {
   $('.container').show()
   $('.movie-info').show()
   $('.content').show()
+  $('#clearFaves').hide()
 }
 
 const signInFailure = function () {
@@ -33,6 +34,7 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   $('#message').text('Successfully changed password')
+  $('#change-password').trigger('reset')
 }
 
 const changePasswordFailure = function () {
