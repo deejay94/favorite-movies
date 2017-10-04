@@ -5,15 +5,19 @@ const showFavesTemplate = require('../templates/favorite-movie-listing.handlebar
 
 const createFaveSuccess = function (data) {
   $('#message').text('You have successfully added movie to your list')
-  $('.submit').on('click', function () {
-    $('form').text('')
-  })
+  $('.fave-movie').empty()
+  $('.movie-info').trigger('reset')
+}
+
+const createFaveFailure = function (data) {
+  $('#message').text('You have NOT successfully added movie to your list')
 }
 
 const getFavesSuccess = (data) => {
   if (data.favorite_movies.length === 0) {
     $('#message').text('You have not created any faves to display')
   } else {
+    $('#clearFaves').show()
     const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
     $('.fave-movie').remove()
     $('.content').append(showFavesHtml)
@@ -34,9 +38,11 @@ const getFavesFailure = function () {
 
 const updateFaveSuccess = function () {
   $('#message').text('You have successfully updated a favorite movie')
+  console.log('here')
   api.index()
     .then(getFavesSuccess)
     .catch(getFavesFailure)
+  $('.update-fave').trigger('reset')
 }
 
 const updateFaveFailure = function () {
@@ -51,7 +57,7 @@ const deleteFavefailure = function () {
   $('#message').text('You have NOT successfully deleted a favorite movie')
 }
 
-const clearFaves = () => {
+const clearFaves = (data) => {
   $('#message').text('You have successfully cleared a favorite movie')
   $('.content').empty()
 }
@@ -69,5 +75,6 @@ module.exports = {
   updateFaveSuccess,
   deleteFaveSuccess,
   deleteFavefailure,
-  createFaveSuccess
+  createFaveSuccess,
+  createFaveFailure
 }
