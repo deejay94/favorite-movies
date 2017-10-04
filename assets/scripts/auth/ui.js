@@ -42,10 +42,8 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  // $('#message3').text('Successfully signed out').fadeout(2400)
   $('#message').text('Registered account? Please sign in')
   $('#message2').text('New user? Please sign up')
-  $('#sign-in').trigger('reset')
   $('#sign-out').hide()
   $('#sign-up').show()
   $('#sign-in').show()
@@ -53,10 +51,8 @@ const signOutSuccess = function () {
   $('.movie-info').hide()
   $('#change-password').hide()
   $('.container').hide()
-  $('.movie-info').trigger('reset')
-  $('.update-fave').trigger('reset')
-  $('#change-password').trigger('reset')
   $('#message2').show()
+  $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
