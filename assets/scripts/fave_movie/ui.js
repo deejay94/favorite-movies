@@ -17,7 +17,7 @@ const getFavesSuccess = (data) => {
   if (data.favorite_movies.length === 0) {
     $('#message').text('You have not created any faves to display')
   } else {
-    $('#clearFaves').show()
+    // $('#clearFaves').show()
     const showFavesHtml = showFavesTemplate({ favorite_movies: data.favorite_movies })
     $('.fave-movie').remove()
     $('.content').append(showFavesHtml)
@@ -56,10 +56,11 @@ const deleteFavefailure = function () {
   $('#message').text('You have NOT successfully deleted a favorite movie')
 }
 
-const clearFaves = (data) => {
-  $('#message').text('You have successfully cleared a favorite movie')
-  $('.content').empty()
-}
+// const clearFaves = () => {
+//   api.index()
+//   $('#message').text('You have successfully cleared a favorite movie')
+//   $('.content').empty()
+// }
 
 const failure = (error) => {
   $('#message').text(error)
@@ -68,7 +69,7 @@ const failure = (error) => {
 module.exports = {
   getFavesSuccess,
   getFavesFailure,
-  clearFaves,
+  // clearFaves,
   failure,
   updateFaveFailure,
   updateFaveSuccess,

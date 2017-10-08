@@ -56,7 +56,7 @@ const onClearFaves = (event) => {
 const addHandlers = () => {
   $('.movie-info').on('submit', onAddFave)
   $('#getFaves').on('click', onGetFaves)
-  $('#clearFaves').on('click', onClearFaves)
+  // $('#clearFaves').on('click', onClearFaves)
   $('.update-fave').on('submit', onUpdateFave)
 }
 
