@@ -8,13 +8,15 @@ $font-color: #000; // #ffc0cb;
 
 $white: #fff;
 $black: #000;
+$pink: #ffc0cb;
 
 
 
 body {
-  background-image: url('http://www.brocode.com/wp-content/uploads/2012/01/popcorn-movie-tickets.jpg');
-  background-size: cover;
-  background-position: center center;
+  background-color: $pink;
+  // background-image: url('http://www.brocode.com/wp-content/uploads/2012/01/popcorn-movie-tickets.jpg');
+  // background-size: cover;
+  // background-position: center center;
 }
 
 
