@@ -35,9 +35,14 @@ const onGetFaves = (event) => {
 }
 
 const onDestroy = function (event) {
-  console.log('events')
   event.preventDefault()
-  api.destroy($(this).parent().parent().data('id'))
+  // console.log($(this).parent().parent().data('id'))
+  console.log($('.getfave').data('id'))
+  const data = $('.getfave').data('id')
+  api.destroy(data)
+    .then(() => {
+      $('th').hide()
+    })
 }
 
 const onUpdateFave = function (event) {
