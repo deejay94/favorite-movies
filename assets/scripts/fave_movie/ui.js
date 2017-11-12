@@ -26,8 +26,8 @@ const getFavesSuccess = (data) => {
       $('#message').text('You have successfully removed a favorite movie')
     })
     $('.delete-fave').on('click', function () {
+      $(this).parent().parent().parent().remove()
       $('#message').text('You have successfully deleted a favorite movie')
-      $(this).parent().parent().remove()
     })
   }
 }
