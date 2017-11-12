@@ -9,32 +9,92 @@ $font-color: #000; // #ffc0cb;
 $white: #fff;
 $black: #000;
 $pink: #ffc0cb;
+$dark-pink: #ff69b4;
+$lavender: #c9c;
 
 
+// .allfave {
+//   display: block;
+// }
 
-body {
-  background-color: $pink;
-  // background-image: url('http://www.brocode.com/wp-content/uploads/2012/01/popcorn-movie-tickets.jpg');
-  // background-size: cover;
-  // background-position: center center;
+.auth-box {
+  border-color: $black;
+  border: .3em solid $black;
+  height: 100%;
+  margin: 0 auto;
 }
 
+body {
+  background-color: $lavender;
+}
+
+.container-cred {
+  padding: 0 980px 0 250px;
+}
 
 .fave-movie {
   color: $black;
   float: left;
+  margin-bottom: 40px;
+}
+
+
+.getfave {
+  background-color: $dark-pink;
+  margin: 20px 0;
+}
+
+#getFaves {
+  margin-right: 30px;
 }
 
 h1 {
   text-align: center;
   text-decoration: underline;
+  font-family: 'Abril Fatface', cursive;
+  color: $dark-pink;
+  font-size: 72px;
 }
+
+.image {
+  display: block;
+}
+
+img {
+  width: 5%;
+}
+
 
 .movie-info {
-  margin-top: 100px;
+  margin: 100px 0;
 }
 
+.pw-out {
+  float: right;
+}
+
+#sign-out {
+  margin: 30px 0 0 442px;
+}
+
+#sign-up-box {
+  margin-bottom: 50px;
+}
+
+td {
+  padding: 20px;
+}
+
+th {
+  padding: 20px;
+}
+
+.title {
+  margin: 150px 0;
+}
+
+
+
 .update-fave {
-  margin-top: 100px;
-  float: left;
+  margin: 100px 0 0 150px;
 }

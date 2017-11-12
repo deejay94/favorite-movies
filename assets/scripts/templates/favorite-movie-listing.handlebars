@@ -1,13 +1,30 @@
+<div class="allfave">
+
+
+
+  <div class="fave-movie" data-id="{{favorite_movie.id}}">
 {{#each favorite_movies as |favorite_movie|}}
+    <div class="getfave">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Title </th>
+          <th>Genre </th>
+          <th>Comment </th>
+        </tr>
 
-  <ul class="fave-movie" data-id="{{favorite_movie.id}}">
-    <li> Id: {{favorite_movie.id}} </li>
-    <li> Title: {{favorite_movie.title}} </li>
-    <li> Genre: {{favorite_movie.genre}} </li>
-    <li> Comment: {{favorite_movie.comment}} </li>
-    <li> <button class= "remove-fave">Remove Movie From List</button></li>
-  </li>
-  <li> <button class="delete-fave">Delete a movie</button></li>
-  </ul>
-
+        <tr>
+          <td>{{favorite_movie.id}}</td>
+          <td>{{favorite_movie.title}}</td>
+          <td>{{favorite_movie.genre}}</td>
+          <td>{{favorite_movie.comment}}</td>
+          <td>
+          <button class= "remove-fave">Remove Movie From List</button>
+          <button class="delete-fave">Delete a movie</button>
+        </td>
+        </tr>
+      </table>
+  </div>
 {{/each}}
+</div>
+</div>

@@ -22,7 +22,7 @@ const getFavesSuccess = (data) => {
     $('.fave-movie').remove()
     $('.content').append(showFavesHtml)
     $('.remove-fave').on('click', function () {
-      $(this).parent().parent().remove()
+      $(this).parent().parent().parent().remove()
       $('#message').text('You have successfully removed a favorite movie')
     })
     $('.delete-fave').on('click', function () {
@@ -49,7 +49,10 @@ const updateFaveFailure = function () {
 }
 
 const deleteFaveSuccess = function () {
-  $('#message').text('You have successfully deleted a favorite movie')
+  $('#message').show().text('Delete success!')
+  api.index()
+    .then(getFavesSuccess)
+    .catch(getFavesFailure)
 }
 
 const deleteFavefailure = function () {

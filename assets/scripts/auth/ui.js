@@ -26,6 +26,7 @@ const signInSuccess = function (data) {
   $('.movie-info').show()
   $('.content').show()
   $('#clearFaves').hide()
+  $('.auth-box').hide()
 }
 
 const signInFailure = function () {

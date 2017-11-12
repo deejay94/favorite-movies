@@ -6,35 +6,16 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>My Favorite Movies</h1>
 
-
-      <p id="message"></p>
-      <form id="sign-up">
-        <fieldset>
-          <input type="text" name="credentials[email]" placeholder="Username">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
-
-      <p id="message2"></p>
-      <form id="sign-in">
-        <fieldset>
-          <input type="text" name="credentials[email]" placeholder="Username">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
-
-
+      <div class="pw-out">
+        <p id="message"></p>
       <form id="change-password">
         <fieldset>
           <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -48,6 +29,35 @@
                 <input type="submit" name="sign out" value="Sign Out!">
               </fieldset>
             </form>
+          </div>
+  <div class="title">
+    <h1>My Favorite Movies<img alt="popcorn" src="popcorn.jpg"></h1>
+  </div>
+      <div class="container-cred">
+      <div id="sign-up-box" class="auth-box">
+      <form id="sign-up">
+        <fieldset>
+          <input type="text" name="credentials[email]" placeholder="Username">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+    </div>
+
+      <p id="message2"></p>
+      <div class="auth-box">
+      <form id="sign-in" class="credentials">
+        <fieldset>
+          <input type="text" name="credentials[email]" placeholder="Username">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+    </div>
+    </div>
+
+    <div class="container">
 
       <form class="movie-info">
         <fieldset>
@@ -59,18 +69,18 @@
         </fieldset>
       </form>
 
-    <div class="container">
-        <button id="getFaves" class="btn btn-default">Get Faves!</button>
-        <!-- <button id="clearFaves" class="btn btn-default">Clear Faves!</button> -->
+      <div class="updatefave">
       <form class="update-fave">
+        <button id="getFaves" class="btn btn-default">Get Faves!</button>
         <input type="text" name="favorite_movie[id]" placeholder="Enter favorite movie id">
         <input type="text" name="favorite_movie[title]" placeholder="Enter new favorite movie title">
         <input type="text" name="favorite_movie[genre]" placeholder="Enter new favorite movie genre">
         <input type="text" name="favorite_movie[comment]" placeholder="Enter favorite movie comment">
         <input type="submit" name="update" value="Edit Fave">
       </form>
-        <div id="content" class="content">
+      <div id="content" class="content">
     </div>
-</div>
+    </div>
+  </div>
     </body>
 </html>
