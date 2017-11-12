@@ -1,6 +1,4 @@
 const store = require('../store')
-// const start = require('../fave_movie/on-begin')
-// const logic = require('./gamelogic')
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up. Please sign-in')
@@ -26,7 +24,6 @@ const signInSuccess = function (data) {
   $('.container').show()
   $('.movie-info').show()
   $('.content').show()
-  $('#clearFaves').hide()
   $('.auth-box').hide()
 }
 
