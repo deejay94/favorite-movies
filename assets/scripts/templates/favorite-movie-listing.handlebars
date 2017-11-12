@@ -2,16 +2,17 @@
 
 
 
-  <div class="fave-movie" data-id="{{favorite_movie.id}}">
+
 {{#each favorite_movies as |favorite_movie|}}
-    <div class="getfave">
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Title </th>
-          <th>Genre </th>
-          <th>Comment </th>
-        </tr>
+    <div class="getfave" data-id="{{favorite_movie.id}}">
+      <table class="fave-movie">
+        <tbody>
+          <tr>
+            <th>Id</th>
+            <th>Title </th>
+            <th>Genre </th>
+            <th>Comment </th>
+          </tr>
 
         <tr>
           <td>{{favorite_movie.id}}</td>
@@ -23,8 +24,8 @@
           <button class="delete-fave">Delete a movie</button>
         </td>
         </tr>
+      </tbody>
       </table>
   </div>
 {{/each}}
-</div>
 </div>
