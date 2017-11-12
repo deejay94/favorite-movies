@@ -4,7 +4,7 @@
 
 
 {{#each favorite_movies as |favorite_movie|}}
-    <div class="getfave" data-id="{{favorite_movie.id}}">
+    <div class="getfave">
       <table class="fave-movie">
         <tbody>
           <tr>
@@ -14,7 +14,7 @@
             <th>Comment </th>
           </tr>
 
-        <tr>
+        <tr data-id="{{favorite_movie.id}}">
           <td>{{favorite_movie.id}}</td>
           <td>{{favorite_movie.title}}</td>
           <td>{{favorite_movie.genre}}</td>
