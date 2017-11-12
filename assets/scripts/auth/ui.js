@@ -13,8 +13,9 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Successfully signed in')
+  $('#message').text('Successfully signed in').fadeOut(1800)
   $('#message2').hide()
+  $('#message3').hide()
   store.user = data.user
   $('#change-password').show()
   $('#sign-up').trigger('reset')
@@ -34,12 +35,12 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Successfully changed password')
+  $('#message').text('Successfully changed password').show().fadeOut(1800)
   $('#change-password').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Error on change password')
+  $('#message').text('Error on change password').show()
 }
 
 const signOutSuccess = function () {
@@ -53,7 +54,9 @@ const signOutSuccess = function () {
   $('#change-password').hide()
   $('.container').hide()
   $('#message2').show()
+  $('#message3').show()
   $('form').trigger('reset')
+  $('.auth-box').show()
 }
 
 const signOutFailure = function () {
