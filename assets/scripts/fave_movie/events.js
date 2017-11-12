@@ -36,13 +36,8 @@ const onGetFaves = (event) => {
 
 const onDestroy = function (event) {
   event.preventDefault()
-  // console.log($(this).parent().parent().data('id'))
-  console.log($('.getfave').data('id'))
-  const data = $('.getfave').data('id')
+  const data = $(this).parent().parent().data('id')
   api.destroy(data)
-    .then(() => {
-      $('th').hide()
-    })
 }
 
 const onUpdateFave = function (event) {
@@ -54,15 +49,9 @@ const onUpdateFave = function (event) {
     .catch(ui.updateFaveFailure)
 }
 
-const onClearFaves = (event) => {
-  event.preventDefault()
-  ui.clearFaves()
-}
-
 const addHandlers = () => {
   $('.movie-info').on('submit', onAddFave)
   $('#getFaves').on('click', onGetFaves)
-  // $('#clearFaves').on('click', onClearFaves)
   $('.update-fave').on('submit', onUpdateFave)
 }
 
