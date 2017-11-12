@@ -47,7 +47,6 @@ const index = function () {
 }
 
 const destroy = function (data) {
-  console.log('api data ', data)
   return $.ajax({
     url: config.apiOrigin + '/favorite_movies/' + data,
     method: 'DELETE',
