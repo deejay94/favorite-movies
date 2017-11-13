@@ -21,7 +21,6 @@ const onAddFave = function (event) {
   api.create(data)
     .then(ui.createFaveSuccess)
     .catch(ui.createFaveFailure)
-  $('.content').append(data)
 }
 
 const onGetFaves = (event) => {
@@ -38,21 +37,13 @@ const onDestroy = function (event) {
   event.preventDefault()
   const data = $(this).parent().parent().data('id')
   api.destroy(data)
-}
-
-const onUpdateFave = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
-  const id = data.favorite_movie.id
-  api.update(data, id)
-    .then(ui.updateFaveSuccess)
-    .catch(ui.updateFaveFailure)
+    .then(ui.deleteFaveSuccess)
+    .catch(ui.deleteFavefailure)
 }
 
 const addHandlers = () => {
   $('.movie-info').on('submit', onAddFave)
   $('#getFaves').on('click', onGetFaves)
-  $('.update-fave').on('submit', onUpdateFave)
 }
 
 module.exports = {
