@@ -3,16 +3,6 @@
 const config = require('../config.js')
 const store = require('../store')
 
-// const create = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/favorite_movies',
-//     method: 'POST',
-//     data: '{}',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 
 const create = function (data) {
   return $.ajax({
@@ -25,9 +15,9 @@ const create = function (data) {
   })
 }
 
-const update = function (data, id) {
+const update = function (data, newId) {
   return $.ajax({
-    url: config.apiOrigin + '/favorite_movies/' + id,
+    url: config.apiOrigin + '/favorite_movies/' + newId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
